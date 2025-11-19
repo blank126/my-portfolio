@@ -1,59 +1,220 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg: #f4f6f8;
+    --card-bg: #ffffff;
+    --text: #333;
+    --border: #e0e0e0;
 }
 
+* { box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 구조 1: 헤더 */
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
+    background-color: var(--primary);
+    color: white;
+    padding: 30px 20px;
     text-align: center;
 }
 
+header h1 { margin: 0; font-size: 2rem; }
+header p { margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem; }
+
+/* 구조 2: 네비게이션 */
 nav {
-    margin: 20px 0;
+    background-color: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
 }
 
 nav a {
-    color: #ffffff;
+    display: block;
     text-decoration: none;
-    margin: 0 15px;
+    color: var(--text);
+    font-weight: 600;
+    padding: 15px 10px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+/* 메인 컨테이너 */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.footer {
-    background: #35424a;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
+/* 공통 카드 스타일 (ex.html의 section-box 개선) */
+.section-box, .card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border: 1px solid var(--border); /* 점선 대신 실선 */
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--primary);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+/* 구조 3-2: Flex Row (좌우 배치) */
+.flex-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.flex-item {
+    flex: 1;
+    /* border: 1px dashed #aaa;  <- ex.html 스타일 대신 아래 카드 스타일 사용 */
+    background: white;
+    margin-bottom: 0; /* flex 컨테이너 안이라 마진 제거 */
+}
+
+/* 모바일 대응: 화면 작으면 세로로 배치 */
+@media (max-width: 768px) {
+    .flex-row { flex-direction: column; }
+}
+
+/* 폼 스타일 */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+.form-group input, 
+.form-group select, 
+.form-group textarea {
     width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.form-group textarea { height: 80px; resize: vertical; }
+
+.btn-group { display: flex; gap: 10px; margin-top: 20px; }
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #2980b9; }
+.btn-secondary { background: #ecf0f1; color: #555; }
+.btn-danger { background: white; border: 1px solid #e74c3c; color: #e74c3c; font-size: 0.9rem;}
+.btn-danger:hover { background: #e74c3c; color: white; }
+
+/* 도움말 박스 스타일 */
+.info-box { background-color: #fdfdfd; }
+.info-list { padding-left: 20px; color: #555; }
+.info-list li { margin-bottom: 8px; }
+
+/* 구조 3-3: 테이블 스타일 */
+.list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+th { background-color: #f8f9fa; font-weight: 600; color: var(--primary); }
+tr:hover { background-color: #f1f2f6; }
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    background: white;
 }
 
-.project {
-    background: #ffffff;
-    border: 1px solid #dddddd;
-    margin: 20px 0;
-    padding: 15px;
-    border-radius: 5px;
+/* === 기존 CSS 아래에 추가 === */
+
+/* 뱃지 기본 스타일 */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    background-color: #eee;
 }
 
-.project h3 {
-    margin: 0 0 10px;
+/* 카테고리별 색상 */
+.badge-edu {
+    background-color: #e8f5e9; /* 연한 초록 */
+    color: #2e7d32;
 }
 
-.project p {
-    margin: 0;
+.badge-work {
+    background-color: #e3f2fd; /* 연한 파랑 */
+    color: #1565c0;
+}
+
+.badge-proj {
+    background-color: #f3e5f5; /* 연한 보라 */
+    color: #7b1fa2;
+}
+
+/* 삭제 버튼 (X 모양) 작게 */
+.btn-delete {
+    background-color: transparent;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+    color: white;
 }

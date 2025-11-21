@@ -29,10 +29,10 @@ function initSampleData() {
     const sample = new ResumeItem(
         Date.now(), 
         '학력', 
-        '2020.03 ~ 2024.02', 
-        '한국대학교', 
+        '2021.03 ~ 2027.02', 
+        '대구대학교', 
         '컴퓨터공학 학사', 
-        '웹 프로그래밍 및 자료구조 A+ 이수'
+        '웹 프로그래밍 및 자료구조 이수'
     );
     resumeList.push(sample);
     renderTable();

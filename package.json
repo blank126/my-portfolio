@@ -4,13 +4,13 @@
   "description": "A personal portfolio website to showcase projects and skills.",
   "main": "src/index.html",
   "scripts": {
-    "start": "live-server src",
+    "start": "live-server src --browser=chrome",
     "build": "echo 'Build process not defined yet.'"
   },
   "keywords": [
     "portfolio",
     "web",
-    "projects"
+    "resume"
   ],
   "author": "Your Name",
   "license": "MIT",

@@ -2,11 +2,16 @@
 class ResumeItem {
     constructor(id, category, period, title, role, desc) {
         this.id = id;
-        this.category = category; // 학력, 경력, 프로젝트 등
-        this.period = period;     // 기간
-        this.title = title;       // 학교명, 회사명 등
-        this.role = role;         // 전공, 직위 등
-        this.desc = desc;         // 상세 설명
+        this.category = category; 
+        this.period = period;     
+        this.title = title;       
+        this.role = role;         
+        this.desc = desc;         
+    }
+
+    // [필수조건 1-2] 메서드 1개 이상 정의: 요약 정보 반환
+    getSummary() {
+        return `[${this.category}] ${this.title} - ${this.role}`;
     }
 }
 
@@ -19,15 +24,15 @@ const tbody = document.getElementById('tbody');
 const filterSelect = document.getElementById('filter');
 const clearBtn = document.getElementById('clearAll');
 
-// [샘플 데이터] 처음 실행 시 예시로 하나 추가해둠 (필요 없으면 삭제 가능)
+// [샘플 데이터]
 function initSampleData() {
     const sample = new ResumeItem(
         Date.now(), 
         '학력', 
-        '2021.03 ~ 2027.02', 
-        '대구대학교', 
-        '컴퓨터공학 학사(예정)', 
-        '웹 프로그래밍 및 자료구조 이수, 졸업 프로젝트 대상 수상(예정)'
+        '2020.03 ~ 2024.02', 
+        '한국대학교', 
+        '컴퓨터공학 학사', 
+        '웹 프로그래밍 및 자료구조 A+ 이수'
     );
     resumeList.push(sample);
     renderTable();
@@ -43,15 +48,18 @@ form.addEventListener('submit', (e) => {
     const role = document.getElementById('role').value;
     const desc = document.getElementById('desc').value;
 
-    // 유효성 검사 (간단 예시)
-    if(!title) {
-        alert("명칭(소속/자격증명)을 입력해주세요.");
+    // 유효성 검사: 제목은 2글자 이상
+    if(!title || title.length < 2) {
+        alert("명칭(조직/학교/자격증명)은 2글자 이상 입력해주세요.");
         return;
     }
 
     const newItem = new ResumeItem(Date.now(), category, period, title, role, desc);
-    resumeList.push(newItem); // 최신순 정렬을 원하면 unshift() 사용 가능
     
+    // 메서드 호출 확인용 로그
+    console.log("새 항목 추가됨:", newItem.getSummary()); 
+
+    resumeList.push(newItem);
     renderTable();
     form.reset();
 });
@@ -62,7 +70,7 @@ function renderTable() {
 
     const filterVal = filterSelect.value;
     
-    // 필터링
+    // [가산점] 필터링 기능
     const filtered = resumeList.filter(item => {
         return filterVal === 'all' || item.category === filterVal;
     });
@@ -75,18 +83,19 @@ function renderTable() {
     filtered.forEach(item => {
         const tr = document.createElement('tr');
         
-        // 카테고리에 따른 뱃지 클래스 설정 (CSS에서 색상 다르게 줄 수 있음)
+        // 카테고리별 뱃지 스타일 적용
         let badgeClass = 'badge-default';
         if(item.category === '학력') badgeClass = 'badge-edu';
         else if(item.category === '경력') badgeClass = 'badge-work';
         else if(item.category === '프로젝트') badgeClass = 'badge-proj';
         
+        // [필수조건 1-4] innerHTML 동적 생성
         tr.innerHTML = `
             <td style="text-align: center;"><span class="badge ${badgeClass}">${item.category}</span></td>
             <td>${item.period}</td>
             <td style="font-weight: bold; color: #2c3e50;">${item.title}</td>
             <td>${item.role}</td>
-            <td style="color: #555; font-size: 0.9rem;">${item.desc.replace(/\n/g, '<br>')}</td>
+            <td style="color: #555; font-size: 0.9rem;">${item.desc}</td>
             <td style="text-align: center;">
                 <button class="btn-delete" onclick="deleteItem(${item.id})">×</button>
             </td>
@@ -95,7 +104,7 @@ function renderTable() {
     });
 }
 
-// 3. 삭제 함수 (Global scope로 노출)
+// 3. [필수조건 1-4] 삭제 기능
 window.deleteItem = (id) => {
     if(confirm("이 항목을 삭제하시겠습니까?")) {
         resumeList = resumeList.filter(item => item.id !== id);
@@ -114,5 +123,5 @@ clearBtn.addEventListener('click', () => {
 // 5. 필터 변경 이벤트
 filterSelect.addEventListener('change', renderTable);
 
-// 초기화 실행
+// 초기 데이터 로드
 initSampleData();

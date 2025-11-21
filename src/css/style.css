@@ -18,7 +18,7 @@ body {
     line-height: 1.6;
 }
 
-/* 구조 1: 헤더 */
+/* 헤더 */
 header {
     background-color: var(--primary);
     color: white;
@@ -29,7 +29,7 @@ header {
 header h1 { margin: 0; font-size: 2rem; }
 header p { margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem; }
 
-/* 구조 2: 네비게이션 */
+/* 네비게이션 */
 nav {
     background-color: white;
     border-bottom: 1px solid var(--border);
@@ -70,14 +70,14 @@ main {
     padding: 0 20px;
 }
 
-/* 공통 카드 스타일 (ex.html의 section-box 개선) */
+/* 공통 카드 스타일 */
 .section-box, .card {
     background: var(--card-bg);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     margin-bottom: 30px;
-    border: 1px solid var(--border); /* 점선 대신 실선 */
+    border: 1px solid var(--border);
 }
 
 h2 {
@@ -89,7 +89,7 @@ h2 {
     font-size: 1.4rem;
 }
 
-/* 구조 3-2: Flex Row (좌우 배치) */
+/* Flex Row (좌우 배치) */
 .flex-row {
     display: flex;
     gap: 30px;
@@ -98,12 +98,10 @@ h2 {
 
 .flex-item {
     flex: 1;
-    /* border: 1px dashed #aaa;  <- ex.html 스타일 대신 아래 카드 스타일 사용 */
     background: white;
-    margin-bottom: 0; /* flex 컨테이너 안이라 마진 제거 */
+    margin-bottom: 0;
 }
 
-/* 모바일 대응: 화면 작으면 세로로 배치 */
 @media (max-width: 768px) {
     .flex-row { flex-direction: column; }
 }
@@ -143,7 +141,7 @@ button {
 .info-list { padding-left: 20px; color: #555; }
 .info-list li { margin-bottom: 8px; }
 
-/* 구조 3-3: 테이블 스타일 */
+/* 테이블 스타일 */
 .list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 table {
     width: 100%;
@@ -158,19 +156,7 @@ th, td {
 th { background-color: #f8f9fa; font-weight: 600; color: var(--primary); }
 tr:hover { background-color: #f1f2f6; }
 
-/* 푸터 */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #888;
-    border-top: 1px solid #ddd;
-    margin-top: 40px;
-    background: white;
-}
-
-/* === 기존 CSS 아래에 추가 === */
-
-/* 뱃지 기본 스타일 */
+/* 뱃지 스타일 */
 .badge {
     display: inline-block;
     padding: 4px 8px;
@@ -180,24 +166,11 @@ footer {
     color: #555;
     background-color: #eee;
 }
+.badge-edu { background-color: #e8f5e9; color: #2e7d32; }
+.badge-work { background-color: #e3f2fd; color: #1565c0; }
+.badge-proj { background-color: #f3e5f5; color: #7b1fa2; }
 
-/* 카테고리별 색상 */
-.badge-edu {
-    background-color: #e8f5e9; /* 연한 초록 */
-    color: #2e7d32;
-}
-
-.badge-work {
-    background-color: #e3f2fd; /* 연한 파랑 */
-    color: #1565c0;
-}
-
-.badge-proj {
-    background-color: #f3e5f5; /* 연한 보라 */
-    color: #7b1fa2;
-}
-
-/* 삭제 버튼 (X 모양) 작게 */
+/* 삭제 버튼 */
 .btn-delete {
     background-color: transparent;
     border: 1px solid #e74c3c;
@@ -213,8 +186,14 @@ footer {
     font-size: 1.2rem;
     line-height: 1;
 }
+.btn-delete:hover { background-color: #e74c3c; color: white; }
 
-.btn-delete:hover {
-    background-color: #e74c3c;
-    color: white;
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    background: white;
 }

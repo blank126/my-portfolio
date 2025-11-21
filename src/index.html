@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>나의 온라인 이력서</title>
+  <title>나만의 온라인 이력서</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+<!-- 헤더 -->
 <header>
   <h1>📄 My Resume Builder</h1>
   <p>나의 경험과 경력을 체계적으로 관리하는 온라인 이력서</p>
 </header>
 
+<!-- 네비게이션 -->
 <nav>
   <ul>
     <li><a href="#intro">자기소개</a></li>
@@ -23,9 +25,11 @@
 
 <main>
 
+  <!-- 섹션 1: 자기소개 (프로필) -->
   <section id="intro" class="section-box">
     <h2>👋 About Me</h2>
     <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+      <!-- 프로필 사진 영역 (이미지가 없다면 텍스트박스로 대체) -->
       <div style="width: 100px; height: 100px; background-color: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold;">
         Profile
       </div>
@@ -40,15 +44,18 @@
     </div>
   </section>
 
+  <!-- 섹션 2: 이력 등록 폼 (좌우 배치) -->
   <section id="form" class="flex-row">
     
+    <!-- 왼쪽: 입력 폼 -->
     <div class="flex-item card">
       <h2>➕ 이력/경력 추가</h2>
       <form id="resumeForm" novalidate>
         
+        <!-- 구분 & 기간 -->
         <div style="display: flex; gap: 15px;">
           <div class="form-group" style="flex: 1;">
-            <label for="category">구분</label>
+            <label for="category">구분 *</label>
             <select id="category" name="category" required>
               <option value="학력">🎓 학력</option>
               <option value="경력">💼 경력</option>
@@ -57,26 +64,31 @@
             </select>
           </div>
           <div class="form-group" style="flex: 1;">
-            <label for="period">기간</label>
+            <label for="period">기간 *</label>
             <input type="text" id="period" name="period" placeholder="예: 2023.03 ~ 2024.02" required />
           </div>
         </div>
 
+        <!-- 소속/제목 -->
         <div class="form-group">
-          <label for="title">조직 / 학교 / 자격증명</label>
-          <input type="text" id="title" name="title" required placeholder="예: 한국대학교, (주)스타트업, 정보처리기사" />
+          <label for="title">조직 / 학교 / 자격증명 *</label>
+          <!-- HTML5 속성: required, minlength 추가 -->
+          <input type="text" id="title" name="title" required minlength="2" placeholder="예: 한국대학교, (주)스타트업" />
         </div>
 
+        <!-- 직위/역할 -->
         <div class="form-group">
           <label for="role">전공 / 직위 / 역할</label>
-          <input type="text" id="role" name="role" placeholder="예: 컴퓨터공학 전공, 프론트엔드 인턴, 점수: 900점" />
+          <input type="text" id="role" name="role" placeholder="예: 컴퓨터공학 전공, 프론트엔드 인턴" />
         </div>
 
+        <!-- 상세 설명 -->
         <div class="form-group">
           <label for="desc">상세 활동 및 성과</label>
           <textarea id="desc" name="desc" placeholder="주요 업무 내용, 배운 점, 성과 등을 자유롭게 기술하세요."></textarea>
         </div>
 
+        <!-- 버튼 -->
         <div class="btn-group">
           <button type="submit" class="btn-primary">추가하기</button>
           <button type="reset" class="btn-secondary">초기화</button>
@@ -84,12 +96,13 @@
       </form>
     </div>
 
+    <!-- 오른쪽: 팁 박스 -->
     <div class="flex-item card info-box">
       <h2>💡 작성 팁</h2>
       <ul class="info-list">
         <li><strong>기간:</strong> 최신순 정렬을 위해 'YYYY.MM' 형식을 권장합니다.</li>
         <li><strong>경력:</strong> 어떤 기술 스택을 사용했는지 '상세 활동'에 적어주세요.</li>
-        <li><strong>프로젝트:</strong> 본인의 구체적인 역할과 기여도를 강조하면 좋습니다.</li>
+        <li><strong>필수:</strong> 별표(*)가 있는 항목은 반드시 입력해야 합니다.</li>
       </ul>
       <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
       <div style="text-align: center;">
@@ -98,6 +111,7 @@
     </div>
   </section>
 
+  <!-- 섹션 3: 이력서 리스트 -->
   <section id="list" class="section-box">
     <div class="list-header">
       <h2>📂 My History</h2>
@@ -124,7 +138,8 @@
         </tr>
       </thead>
       <tbody id="tbody">
-        </tbody>
+        <!-- 자바스크립트로 내용 추가됨 -->
+      </tbody>
     </table>
   </section>
 
@@ -134,6 +149,6 @@
   © 2025 My Online Resume. All Rights Reserved.
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

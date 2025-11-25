@@ -1,154 +1,235 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>나만의 온라인 이력서</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>이동규 — 대학생 포트폴리오</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-<!-- 헤더 -->
-<header>
-  <h1>📄 My Resume Builder</h1>
-  <p>나의 경험과 경력을 체계적으로 관리하는 온라인 이력서</p>
-</header>
-
-<!-- 네비게이션 -->
-<nav>
-  <ul>
-    <li><a href="#intro">자기소개</a></li>
-    <li><a href="#form">이력 추가</a></li>
-    <li><a href="#list">이력서 보기</a></li>
-  </ul>
-</nav>
-
-<main>
-
-  <!-- 섹션 1: 자기소개 (프로필) -->
-  <section id="intro" class="section-box">
-    <h2>👋 About Me</h2>
-    <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-      <!-- 프로필 사진 영역 (이미지가 없다면 텍스트박스로 대체) -->
-      <div style="width: 100px; height: 100px; background-color: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold;">
-        Profile
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <h1>이동규 · Portfolio</h1>
+        <p class="subtitle">Front-end · UI / UX · Web Developer</p>
       </div>
-      <div style="flex: 1;">
-        <h3 style="margin: 0 0 10px 0; color: #2c3e50;">이동규 (Lee Dong Gyu)</h3>
-        <p style="margin: 0 0 5px 0;">📧 donggyu488@gmail.com | 📞 010-2911-8076</p>
-        <p style="color: #666;">
-          "문제를 해결하는 것을 즐기는 <strong>주니어 개발자</strong>입니다.<br>
-          사용자 경험을 중요시하며, 지속적인 성장을 목표로 합니다."
-        </p>
-      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="주요 섹션">
+        <ul>
+          <li><a href="#hero">홈</a></li>
+          <li><a href="#about">소개</a></li>
+          <li><a href="#skills">기술</a></li>
+          <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#experience">경력/학력</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- 섹션 2: 이력 등록 폼 (좌우 배치) -->
-  <section id="form" class="flex-row">
-    
-    <!-- 왼쪽: 입력 폼 -->
-    <div class="flex-item card">
-      <h2>➕ 이력/경력 추가</h2>
-      <form id="resumeForm" novalidate>
-        
-        <!-- 구분 & 기간 -->
-        <div style="display: flex; gap: 15px;">
-          <div class="form-group" style="flex: 1;">
-            <label for="category">구분 *</label>
-            <select id="category" name="category" required>
-              <option value="학력">🎓 학력</option>
-              <option value="경력">💼 경력</option>
-              <option value="프로젝트">💻 프로젝트</option>
-              <option value="자격증">📜 자격증/기타</option>
-            </select>
+  <main class="wrap main-area" role="main">
+
+    <!-- Hero / 프로필 -->
+    <section id="hero" class="section section-hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-avatar" aria-hidden="true">DG</div>
+        <div class="hero-info">
+          <h2 id="hero-title">이동규 (Lee Dong Gyu)</h2>
+          <p class="meta">대구대학교 컴퓨터공학 • Front-end Developer</p>
+          <p class="lead">사용자 경험을 고려한 인터페이스 개발을 좋아하며, JavaScript와 CSS로 깔끔하고 반응형 웹을 만듭니다.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
+            <a class="btn btn-outline" href="assets/resume.pdf" download>이력서 다운로드</a>
+            <a class="btn btn-ghost" href="mailto:donggyu488@gmail.com">메일 보내기</a>
           </div>
-          <div class="form-group" style="flex: 1;">
-            <label for="period">기간 *</label>
-            <input type="text" id="period" name="period" placeholder="예: 2023.03 ~ 2024.02" required />
+
+          <div class="socials">
+            <a href="https://github.com/your-gh" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">Behance</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- 소속/제목 -->
-        <div class="form-group">
-          <label for="title">조직 / 학교 / 자격증명 *</label>
-          <!-- HTML5 속성: required, minlength 추가 -->
-          <input type="text" id="title" name="title" required minlength="2" placeholder="예: 대구대학교, (주)스타트업" />
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h3 id="about-title">소개</h3>
+      <p>프론트엔드 개발을 전공하며 웹 표준과 접근성에 관심 있는 주니어 개발자입니다. 팀 프로젝트에서 UI 설계 및 인터랙션을 담당했고, 다양한 웹 프로젝트를 통해 반응형 레이아웃과 상태 관리 경험을 쌓았습니다.</p>
+
+      <div class="summary-grid">
+        <div class="card small">
+          <h4>관심 분야</h4>
+          <p>웹 퍼포먼스, UI 애니메이션, 접근성(ARIA), 상태 관리</p>
         </div>
-
-        <!-- 직위/역할 -->
-        <div class="form-group">
-          <label for="role">전공 / 직위 / 역할</label>
-          <input type="text" id="role" name="role" placeholder="예: 컴퓨터공학 전공, 프론트엔드 인턴" />
+        <div class="card small">
+          <h4>도구</h4>
+          <p>VSCode · Git · Chrome DevTools · Figma</p>
         </div>
-
-        <!-- 상세 설명 -->
-        <div class="form-group">
-          <label for="desc">상세 활동 및 성과</label>
-          <textarea id="desc" name="desc" placeholder="주요 업무 내용, 배운 점, 성과 등을 자유롭게 기술하세요."></textarea>
+        <div class="card small">
+          <h4>언어</h4>
+          <p>한국어(원어민) · 영어(중상)</p>
         </div>
+      </div>
+    </section>
 
-        <!-- 버튼 -->
-        <div class="btn-group">
-          <button type="submit" class="btn-primary">추가하기</button>
-          <button type="reset" class="btn-secondary">초기화</button>
-        </div>
-      </form>
-    </div>
+    <!-- Skills -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h3 id="skills-title">기술 스택</h3>
 
-    <!-- 오른쪽: 팁 박스 -->
-    <div class="flex-item card info-box">
-      <h2>💡 작성 팁</h2>
-      <ul class="info-list">
-        <li><strong>기간:</strong> 최신순 정렬을 위해 'YYYY.MM' 형식을 권장합니다.</li>
-        <li><strong>경력:</strong> 어떤 기술 스택을 사용했는지 '상세 활동'에 적어주세요.</li>
-        <li><strong>필수:</strong> 별표(*)가 있는 항목은 반드시 입력해야 합니다.</li>
+      <ul class="skills">
+        <li>
+          <div class="skill-head"><strong>JavaScript</strong><span class="level-text">상</span></div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
+            <div class="progress-bar js" style="width:85%"></div>
+          </div>
+        </li>
+        <li>
+          <div class="skill-head"><strong>HTML / CSS</strong><span class="level-text">상</span></div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88">
+            <div class="progress-bar css" style="width:88%"></div>
+          </div>
+        </li>
+        <li>
+          <div class="skill-head"><strong>React</strong><span class="level-text">중</span></div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+            <div class="progress-bar react" style="width:70%"></div>
+          </div>
+        </li>
       </ul>
-      <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-      <div style="text-align: center;">
-        <button type="button" id="clearAll" class="btn-danger">전체 초기화</button>
+    </section>
+
+    <!-- Projects (폼 + 리스트) -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <h3 id="projects-title">프로젝트</h3>
+
+      <div class="grid-row">
+        <div class="col card">
+          <h4>➕ 프로젝트 / 이력 추가</h4>
+          <form id="resumeForm" novalidate>
+            <div class="field-group">
+              <label for="category">구분 *</label>
+              <select id="category" name="category" required>
+                <option value="">선택</option>
+                <option value="학력">학력</option>
+                <option value="경력">경력</option>
+                <option value="프로젝트">프로젝트</option>
+                <option value="자격증">자격증</option>
+              </select>
+            </div>
+
+            <div class="two-col">
+              <div class="field-group">
+                <label for="period">기간 *</label>
+                <input id="period" name="period" type="text" required placeholder="예: 2023.03 ~ 2024.02" />
+              </div>
+              <div class="field-group">
+                <label for="title">기관 / 프로젝트명 *</label>
+                <input id="title" name="title" type="text" required minlength="2" placeholder="예: 대구대학교, 개인 프로젝트" />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="role">전공 / 직책 / 역할</label>
+              <input id="role" name="role" type="text" placeholder="예: 프론트엔드 개발자, 팀 리더" />
+            </div>
+
+            <div class="field-group">
+              <label for="desc">상세 사항</label>
+              <textarea id="desc" name="desc" placeholder="주요 업무·성과·사용 기술 등을 적어주세요."></textarea>
+            </div>
+
+            <div class="field-group">
+              <label for="link">링크 (옵션)</label>
+              <input id="link" name="link" type="url" placeholder="https://github.com/..." />
+            </div>
+
+            <div class="btn-row">
+              <button class="btn btn-primary" type="submit">추가하기</button>
+              <button class="btn btn-outline" type="reset">초기화</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="col card info-box" aria-labelledby="tips-title">
+          <h4 id="tips-title">작성 팁</h4>
+          <ul class="info-list">
+            <li>프로젝트는 제목과 사용 기술을 명확히 적고 링크를 남겨주세요.</li>
+            <li>경력/학력은 최신 순으로 정렬됩니다. 기간 표기 일관성 유지 권장.</li>
+            <li>성과는 숫자(예: 페이지뷰, 성능개선 %)를 적으면 신뢰도가 상승합니다.</li>
+          </ul>
+
+          <hr />
+
+          <div class="center">
+            <button id="clearAll" class="btn btn-danger">전체 데이터 초기화</button>
+          </div>
+        </aside>
       </div>
-    </div>
-  </section>
 
-  <!-- 섹션 3: 이력서 리스트 -->
-  <section id="list" class="section-box">
-    <div class="list-header">
-      <h2>📂 My History</h2>
-      <div class="controls">
-        <select id="filter">
-          <option value="all">전체 보기</option>
-          <option value="학력">학력만</option>
-          <option value="경력">경력만</option>
-          <option value="프로젝트">프로젝트만</option>
-          <option value="자격증">자격증만</option>
-        </select>
+      <div class="table-wrap">
+        <table class="history-table" role="table" aria-describedby="history-info">
+          <caption id="history-info" class="sr-only">등록된 이력/프로젝트 목록</caption>
+          <thead>
+            <tr><th>구분</th><th>기간</th><th>명칭</th><th>직책/전공</th><th>상세</th><th>링크</th><th>관리</th></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
       </div>
+    </section>
+
+    <!-- Experience / Awards -->
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <h3 id="exp-title">경력 · 수상</h3>
+      <div class="timeline-grid">
+        <div class="col card">
+          <h4>주요 경력</h4>
+          <ul class="timeline">
+            <li><strong>2024.06 - 2024.08</strong> · 인턴, (주)모바일 스타트업 — 프론트엔드 개발</li>
+            <li><strong>2023.03 - 2023.12</strong> · 웹 개발 프로젝트 팀 리더 — 학생팀 프로젝트</li>
+          </ul>
+        </div>
+        <div class="col card">
+          <h4>수상 / 활동</h4>
+          <ul class="timeline">
+            <li><strong>2024</strong> · 대학생 창업 경진대회 장려상</li>
+            <li><strong>2022</strong> · 교내 프로그래밍 경진대회 2등</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h3 id="contact-title">연락하기</h3>
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="two-col">
+          <div class="field-group">
+            <label for="cname">이름</label>
+            <input id="cname" name="cname" type="text" />
+          </div>
+          <div class="field-group">
+            <label for="cemail">이메일</label>
+            <input id="cemail" name="cemail" type="email" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="cmsg">메시지</label>
+          <textarea id="cmsg" name="cmsg"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">전송</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <small>© 2025 이동규 · All rights reserved.</small>
     </div>
+  </footer>
 
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 10%;">구분</th>
-          <th style="width: 15%;">기간</th>
-          <th style="width: 20%;">명칭 (소속/자격)</th>
-          <th style="width: 20%;">내용 (전공/직위)</th>
-          <th>상세 설명</th>
-          <th style="width: 8%;">삭제</th>
-        </tr>
-      </thead>
-      <tbody id="tbody">
-        <!-- 자바스크립트로 내용 추가됨 -->
-      </tbody>
-    </table>
-  </section>
-
-</main>
-
-<footer>
-  © 2025 My Online Resume. All Rights Reserved.
-</footer>
-
-<script src="js/app.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

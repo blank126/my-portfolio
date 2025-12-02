@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>소개 · 이동규 — 대학생 포트폴리오</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <h1><a href="index.html">이동규 · Portfolio</a></h1>
+        <p class="subtitle">Front-end · UI / UX · Web Developer</p>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="주요 섹션" id="mainNav">
+        <button id="navToggle" aria-expanded="false" aria-controls="mainNav" class="nav-toggle" aria-label="메뉴 열기">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="about.html">소개</a></li>
+          <li><a href="portfolio.html">포트폴리오</a></li>
+          <li><a href="contact.html">연락처</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main-area" role="main">
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title">자기소개</h2>
+      <p>프론트엔드 개발을 공부하는 대학생입니다. (요약)</p>
+      <div class="summary-grid">
+        <div class="card small">
+          <h4>관심 분야</h4>
+          <p>웹 성능, 애니메이션, 접근성</p>
+        </div>
+        <div class="card small">
+          <h4>도구</h4>
+          <p>HTML/CSS, JavaScript, React, Figma</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 id="skills-title">기술 스택</h2>
+      <p>Skill Bar는 페이지가 보일 때 애니메이션으로 채워집니다.</p>
+      <ul class="skills" id="skillsList">
+        <li>
+          <div class="skill-head"><strong>JavaScript</strong><span class="level-text">85%</span></div>
+          <div class="progress">
+            <div class="progress-bar js" data-value="85"></div>
+          </div>
+        </li>
+        <li>
+          <div class="skill-head"><strong>HTML / CSS</strong><span class="level-text">90%</span></div>
+          <div class="progress">
+            <div class="progress-bar css" data-value="90"></div>
+          </div>
+        </li>
+        <li>
+          <div class="skill-head"><strong>React</strong><span class="level-text">70%</span></div>
+          <div class="progress">
+            <div class="progress-bar react" data-value="70"></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="timeline" class="section">
+      <h2>경력 / 학력</h2>
+      <ul class="timeline">
+        <li><strong>2024</strong> · 인턴십 – 프론트엔드 개발</li>
+        <li><strong>2022</strong> · 학사 입학 – 컴퓨터공학</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <small>© 2025 이동규 · All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+</html>

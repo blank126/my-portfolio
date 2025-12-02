@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>포트폴리오 · 이동규</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <h1><a href="index.html">이동규 · Portfolio</a></h1>
+        <p class="subtitle">Front-end · UI / UX · Web Developer</p>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="주요 섹션" id="mainNav">
+        <button id="navToggle" aria-expanded="false" aria-controls="mainNav" class="nav-toggle" aria-label="메뉴 열기">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="about.html">소개</a></li>
+          <li><a href="portfolio.html">포트폴리오</a></li>
+          <li><a href="contact.html">연락처</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main-area" role="main">
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">작업 갤러리</h2>
+
+      <div class="controls">
+        <label>검색: <input id="searchGallery" placeholder="키워드 검색" /></label>
+        <label>필터:
+          <select id="filterGallery">
+            <option value="all">전체</option>
+            <option value="웹">웹</option>
+            <option value="앱">앱</option>
+            <option value="데이터">데이터</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="galleryGrid" class="gallery-grid">
+        <!-- sample gallery items -->
+        <article class="project-card" data-category="웹">
+          <div class="card-img">
+            <img src="assets/img/sample1.jpg" alt="프로젝트 이미지 1" />
+          </div>
+          <div class="card-body">
+            <h3>개인 블로그</h3>
+            <p class="meta">웹 · 2023</p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="앱">
+          <div class="card-img">
+            <img src="assets/img/sample2.jpg" alt="프로젝트 이미지 2" />
+          </div>
+          <div class="card-body">
+            <h3>모바일 앱</h3>
+            <p class="meta">앱 · 2024</p>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="데이터">
+          <div class="card-img">
+            <img src="assets/img/sample3.jpg" alt="프로젝트 이미지 3" />
+          </div>
+          <div class="card-body">
+            <h3>데이터 시각화</h3>
+            <p class="meta">데이터 · 2024</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Modal for gallery -->
+    <div id="modal" class="modal" hidden aria-hidden="true">
+      <div class="modal-inner">
+        <button class="modal-close" aria-label="닫기">✕</button>
+        <img src="" alt="" class="modal-img" />
+        <div class="modal-meta">
+          <h4 id="modal-title"></h4>
+          <p id="modal-desc"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <small>© 2025 이동규 · All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+</html>

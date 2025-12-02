@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>연락처 · 이동규</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <h1><a href="index.html">이동규 · Portfolio</a></h1>
+        <p class="subtitle">Front-end · UI / UX · Web Developer</p>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="주요 섹션" id="mainNav">
+        <button id="navToggle" aria-expanded="false" aria-controls="mainNav" class="nav-toggle" aria-label="메뉴 열기">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="about.html">소개</a></li>
+          <li><a href="portfolio.html">포트폴리오</a></li>
+          <li><a href="contact.html">연락처</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main-area" role="main">
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">연락하기</h2>
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="two-col">
+          <div class="field-group">
+            <label for="cname">이름 *</label>
+            <input id="cname" name="cname" type="text" required />
+          </div>
+          <div class="field-group">
+            <label for="cemail">이메일 *</label>
+            <input id="cemail" name="cemail" type="email" required />
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="cmsg">메시지 *</label>
+          <textarea id="cmsg" name="cmsg" required></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" type="submit">전송</button>
+          <button class="btn btn-outline" type="reset">초기화</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <small>© 2025 이동규 · All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+</html>

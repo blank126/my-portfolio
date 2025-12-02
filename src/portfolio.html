@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="wrap header-inner">
       <div class="brand">
         <h1><a href="index.html">이동규 · Portfolio</a></h1>
-        <p class="subtitle">Front-end · UI / UX · Web Developer</p>
+        <p class="subtitle">Front-end Developer</p>
       </div>
 
-      <nav class="main-nav" role="navigation" aria-label="주요 섹션" id="mainNav">
-        <button id="navToggle" aria-expanded="false" aria-controls="mainNav" class="nav-toggle" aria-label="메뉴 열기">
+      <nav class="main-nav" id="mainNav">
+        <button id="navToggle" class="nav-toggle" aria-label="메뉴 열기">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
         <ul>
@@ -28,76 +28,83 @@
     </div>
   </header>
 
-  <main class="wrap main-area" role="main">
-    <section id="gallery" class="section" aria-labelledby="gallery-title">
-      <h2 id="gallery-title">작업 갤러리</h2>
+  <main class="wrap main-area">
+    <section id="gallery" class="section">
+      <h2>작업 갤러리</h2>
 
-      <div class="controls">
-        <label>검색: <input id="searchGallery" placeholder="키워드 검색" /></label>
-        <label>필터:
-          <select id="filterGallery">
-            <option value="all">전체</option>
-            <option value="웹">웹</option>
-            <option value="앱">앱</option>
-            <option value="데이터">데이터</option>
-          </select>
-        </label>
+      <div class="controls" style="margin-bottom: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <input id="searchGallery" placeholder="프로젝트 검색..." style="max-width: 200px;" />
+        <select id="filterGallery" style="max-width: 150px;">
+          <option value="all">전체 보기</option>
+          <option value="웹">Web</option>
+          <option value="앱">App</option>
+          <option value="데이터">Data</option>
+        </select>
       </div>
 
       <div id="galleryGrid" class="gallery-grid">
-        <!-- sample gallery items -->
+        
         <article class="project-card" data-category="웹">
           <div class="card-img">
-            <img src="assets/img/sample1.jpg" alt="프로젝트 이미지 1" />
+            <img src="https://placehold.co/600x400/2563eb/white?text=Blog+Project" alt="블로그 프로젝트">
           </div>
           <div class="card-body">
-            <h3>개인 블로그</h3>
-            <p class="meta">웹 · 2023</p>
+            <h3>개인 기술 블로그</h3>
+            <span class="project-meta">Web · React</span>
           </div>
         </article>
 
         <article class="project-card" data-category="앱">
           <div class="card-img">
-            <img src="assets/img/sample2.jpg" alt="프로젝트 이미지 2" />
+            <img src="https://placehold.co/600x400/0d9488/white?text=Todo+App" alt="투두 앱">
           </div>
           <div class="card-body">
-            <h3>모바일 앱</h3>
-            <p class="meta">앱 · 2024</p>
+            <h3>스마트 투두 리스트</h3>
+            <span class="project-meta">App · JavaScript</span>
           </div>
         </article>
 
         <article class="project-card" data-category="데이터">
           <div class="card-img">
-            <img src="assets/img/sample3.jpg" alt="프로젝트 이미지 3" />
+            <img src="https://placehold.co/600x400/475569/white?text=Dashboard" alt="대시보드">
           </div>
           <div class="card-body">
-            <h3>데이터 시각화</h3>
-            <p class="meta">데이터 · 2024</p>
+            <h3>날씨 데이터 시각화</h3>
+            <span class="project-meta">Data · API</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="웹">
+          <div class="card-img">
+            <img src="https://placehold.co/600x400/e11d48/white?text=Portfolio" alt="포트폴리오">
+          </div>
+          <div class="card-body">
+            <h3>나만의 포트폴리오</h3>
+            <span class="project-meta">Web · Design</span>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- Modal for gallery -->
-    <div id="modal" class="modal" hidden aria-hidden="true">
+    <div id="modal" class="modal" aria-hidden="true">
       <div class="modal-inner">
         <button class="modal-close" aria-label="닫기">✕</button>
         <img src="" alt="" class="modal-img" />
         <div class="modal-meta">
-          <h4 id="modal-title"></h4>
-          <p id="modal-desc"></p>
+          <h3 id="modal-title" style="margin-top:0;"></h3>
+          <p id="modal-desc" style="color:var(--text-muted);"></p>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="wrap">
       <small>© 2025 이동규 · All rights reserved.</small>
     </div>
   </footer>
 
-  <script src="js/site.js" defer></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

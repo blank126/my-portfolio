@@ -251,3 +251,26 @@ textarea { resize: vertical; min-height: 120px; }
   color: white; font-weight: bold; opacity: 0; transition: opacity 0.3s ease;
 }
 .project-card:hover .overlay { opacity: 1; }
+
+/* 햄버거 버튼 강제 노출 스타일 (style.css 맨 아래에 추가) */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: block !important;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 9999;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-toggle .bar {
+    display: block !important; /* 핵심 */
+    width: 25px;
+    height: 3px;
+    background-color: #1e293b !important; /* 진한 남색 */
+    margin: 5px 0;
+    border-radius: 3px;
+  }
+}

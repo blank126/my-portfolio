@@ -21,7 +21,7 @@
         <ul>
           <li><a href="index.html">홈</a></li>
           <li><a href="about.html">소개</a></li>
-          <li><a href="portfolio.html">포트폴리오</a></li>
+          <li><a href="portfolio.html" class="active">포트폴리오</a></li>
           <li><a href="contact.html">연락처</a></li>
         </ul>
       </nav>
@@ -46,41 +46,64 @@
         
         <article class="project-card" data-category="웹">
           <div class="card-img">
-            <img src="https://placehold.co/600x400/2563eb/white?text=Blog+Project" alt="블로그 프로젝트">
+            <img src="https://placehold.co/600x400/2563eb/white?text=SPA+Project" alt="SPA 프로젝트">
+            <div class="overlay"><span>🔍 자세히 보기</span></div>
           </div>
           <div class="card-body">
-            <h3>개인 기술 블로그</h3>
-            <span class="project-meta">Web · React</span>
+            <h3>단일 페이지 웹 애플리케이션(SPA)</h3>
+            <div class="card-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">DOM</span>
+              <span class="tag tag-dark">Git</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 12px;">
+              순수 JS를 활용한 동적 웹사이트입니다. 이력 추가/삭제 기능을 구현하고 Git으로 형상 관리를 수행했습니다.
+            </p>
+            <div class="card-actions">
+              <a href="#" class="btn-sm btn-github">GitHub</a>
+              <a href="#" class="btn-sm btn-demo">Demo</a>
+            </div>
           </div>
         </article>
 
         <article class="project-card" data-category="앱">
           <div class="card-img">
             <img src="https://placehold.co/600x400/0d9488/white?text=Todo+App" alt="투두 앱">
+            <div class="overlay"><span>🔍 자세히 보기</span></div>
           </div>
           <div class="card-body">
             <h3>스마트 투두 리스트</h3>
-            <span class="project-meta">App · JavaScript</span>
+            <div class="card-tags">
+              <span class="tag">React</span>
+              <span class="tag">LocalStorage</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 12px;">
+              일정 관리 및 우선순위 정렬 기능이 있는 투두 리스트 앱입니다.
+            </p>
+            <div class="card-actions">
+              <a href="#" class="btn-sm btn-github">GitHub</a>
+              <a href="#" class="btn-sm btn-demo">Demo</a>
+            </div>
           </div>
         </article>
 
         <article class="project-card" data-category="데이터">
           <div class="card-img">
-            <img src="https://placehold.co/600x400/475569/white?text=Dashboard" alt="대시보드">
+            <img src="https://placehold.co/600x400/475569/white?text=Data+Viz" alt="데이터 시각화">
+            <div class="overlay"><span>🔍 자세히 보기</span></div>
           </div>
           <div class="card-body">
-            <h3>날씨 데이터 시각화</h3>
-            <span class="project-meta">Data · API</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="웹">
-          <div class="card-img">
-            <img src="https://placehold.co/600x400/e11d48/white?text=Portfolio" alt="포트폴리오">
-          </div>
-          <div class="card-body">
-            <h3>나만의 포트폴리오</h3>
-            <span class="project-meta">Web · Design</span>
+            <h3>공공데이터 시각화</h3>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">API</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 12px;">
+              공공데이터 포털 API를 활용하여 지역별 데이터를 시각화했습니다.
+            </p>
+            <div class="card-actions">
+              <a href="#" class="btn-sm btn-github">GitHub</a>
+            </div>
           </div>
         </article>
 

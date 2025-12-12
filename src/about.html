@@ -7,20 +7,20 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="wrap header-inner">
       <div class="brand">
         <h1><a href="index.html">이동규 · Portfolio</a></h1>
         <p class="subtitle">Front-end · UI / UX · Web Developer</p>
       </div>
 
-      <nav class="main-nav" role="navigation" aria-label="주요 섹션" id="mainNav">
-        <button id="navToggle" aria-expanded="false" aria-controls="mainNav" class="nav-toggle" aria-label="메뉴 열기">
+      <nav class="main-nav" id="mainNav">
+        <button id="navToggle" class="nav-toggle" aria-label="메뉴 열기">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
         <ul>
           <li><a href="index.html">홈</a></li>
-          <li><a href="about.html">소개</a></li>
+          <li><a href="about.html" class="active">소개</a></li>
           <li><a href="portfolio.html">포트폴리오</a></li>
           <li><a href="contact.html">연락처</a></li>
         </ul>
@@ -28,62 +28,65 @@
     </div>
   </header>
 
-  <main class="wrap main-area" role="main">
-    <section id="about" class="section" aria-labelledby="about-title">
+  <main class="wrap main-area">
+    <section id="about" class="section">
       <h2 id="about-title">자기소개</h2>
-      <p>프론트엔드 개발을 공부하는 대학생입니다. (요약)</p>
+      <p>
+        <strong>"책임감 있는 소통형 개발자"</strong><br>
+        안동병원, 세무사무소 등 다양한 환경에서의 경험을 통해 조직 융화력과 책임감을 길렀습니다. 
+        현재는 웹 프로그래밍 기술을 익히며 실무에 즉시 투입 가능한 역량을 갖추기 위해 노력하고 있습니다.
+      </p>
       <div class="summary-grid">
         <div class="card small">
           <h4>관심 분야</h4>
-          <p>웹 성능, 애니메이션, 접근성</p>
+          <p>웹 애플리케이션(SPA), 인터페이스 개선, SW 공학</p>
         </div>
         <div class="card small">
-          <h4>도구</h4>
-          <p>HTML/CSS, JavaScript, React, Figma</p>
+          <h4>핵심 역량</h4>
+          <p>HTML/CSS/JS 활용, 꼼꼼한 업무 처리, 커뮤니케이션</p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section" aria-labelledby="skills-title">
+    <section id="skills" class="section">
       <h2 id="skills-title">기술 스택</h2>
-      <p>Skill Bar는 페이지가 보일 때 애니메이션으로 채워집니다.</p>
+      <p>전공 수업과 개인 학습을 통해 쌓아온 역량입니다.</p>
       <ul class="skills" id="skillsList">
         <li>
-          <div class="skill-head"><strong>JavaScript</strong><span class="level-text">85%</span></div>
-          <div class="progress">
-            <div class="progress-bar js" data-value="85"></div>
-          </div>
+          <div class="skill-head"><strong>HTML / CSS / JavaScript</strong><span class="level-text">90%</span></div>
+          <div class="progress"><div class="progress-bar css" data-value="90"></div></div>
         </li>
         <li>
-          <div class="skill-head"><strong>HTML / CSS</strong><span class="level-text">90%</span></div>
-          <div class="progress">
-            <div class="progress-bar css" data-value="90"></div>
-          </div>
+          <div class="skill-head"><strong>C / Java / Python</strong><span class="level-text">80%</span></div>
+          <div class="progress"><div class="progress-bar js" data-value="80"></div></div>
         </li>
         <li>
-          <div class="skill-head"><strong>React</strong><span class="level-text">70%</span></div>
-          <div class="progress">
-            <div class="progress-bar react" data-value="70"></div>
-          </div>
+          <div class="skill-head"><strong>Git / GitHub</strong><span class="level-text">75%</span></div>
+          <div class="progress"><div class="progress-bar react" data-value="75"></div></div>
         </li>
       </ul>
     </section>
 
     <section id="timeline" class="section">
-      <h2>경력 / 학력</h2>
+      <h2>경력 및 학력</h2>
       <ul class="timeline">
-        <li><strong>2024</strong> · 인턴십 – 프론트엔드 개발</li>
-        <li><strong>2022</strong> · 학사 입학 – 컴퓨터공학</li>
+        <li><strong>2024.07 ~ </strong> · 사회복지사 2급 과정 이수 중 (패스원)</li>
+        <li><strong>2022 ~ 2024</strong> · 육군 병장 만기 전역 (2022.07 ~ 2024.01)</li>
+        <li><strong>2021.03 ~ </strong> · 대구대학교 컴퓨터공학과 재학 (2027 졸업 예정)</li>
+        <li><strong>2018 ~ 2021</strong> · 의성고등학교 졸업</li>
       </ul>
+      <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.9rem;">
+        * 기타 경력: 안동병원, 세무사무소, 휴양림 아르바이트 등 다수 서비스직 경험 보유
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="wrap">
       <small>© 2025 이동규 · All rights reserved.</small>
     </div>
   </footer>
 
-  <script src="js/site.js" defer></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
